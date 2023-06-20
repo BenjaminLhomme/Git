@@ -1,5 +1,6 @@
 import test from "ava"
 
 test("Hello World", t => {
-  t.pass()
+ // t.pass()
+ t.fail()
 })
