@@ -6,7 +6,8 @@ on:
       - 'main'
   
 jobs:
-  test:
+  hello:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,4 +19,18 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Run Tests
-        run: npm test
+        run: npm test  
+  tests:
+    needs: [hello]
+    runs-on: ubuntu-latest
+
+    steps:
+
+deploy:
+needs: [tests]
+uses: ./.github/workflows/node.js.yml
+
+
+
+
+
