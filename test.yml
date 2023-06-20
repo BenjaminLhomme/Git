@@ -1,13 +1,9 @@
 name: Run Tests
 
 on:
-  #push:
-   # branches:
-    #     - 'main'
-    worklow_run:
-    workflow: ["Run Tests"]
-types:
-      - completed
+  push:
+    branches:
+      - 'main'
   
 jobs:
   test:
